@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.nqnghia.testnavigationdrawer.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.nqnghia.testnavigationdrawer.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.nqnghia.testnavigationdrawer.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/firstTabFragment"
+        android:name="com.nqnghia.testnavigationdrawer.ui.FirstTabFragment"
+        android:label="fragment_first_tab"
+        tools:layout="@layout/fragment_first_tab" >
+        <action
+            android:id="@+id/action_firstTabFragment_to_secondTabFragment"
+            app:destination="@id/secondTabFragment" />
+        <action
+            android:id="@+id/action_firstTabFragment_to_thirdTabFragment"
+            app:destination="@id/thirdTabFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondTabFragment"
+        android:name="com.nqnghia.testnavigationdrawer.ui.SecondTabFragment"
+        android:label="fragment_second_tab"
+        tools:layout="@layout/fragment_second_tab" >
+        <action
+            android:id="@+id/action_secondTabFragment_to_firstTabFragment"
+            app:destination="@id/firstTabFragment" />
+        <action
+            android:id="@+id/action_secondTabFragment_to_thirdTabFragment"
+            app:destination="@id/thirdTabFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdTabFragment"
+        android:name="com.nqnghia.testnavigationdrawer.ui.ThirdTabFragment"
+        android:label="fragment_third_tab"
+        tools:layout="@layout/fragment_third_tab" >
+        <action
+            android:id="@+id/action_thirdTabFragment_to_secondTabFragment"
+            app:destination="@id/secondTabFragment" />
+        <action
+            android:id="@+id/action_thirdTabFragment_to_firstTabFragment"
+            app:destination="@id/firstTabFragment" />
+    </fragment>
+</navigation>
